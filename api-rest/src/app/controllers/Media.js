@@ -14,15 +14,20 @@ class Media {
 
           const json = JSON.parse(data)
 
-          const media = json.grades.reduce((acc, cur) => {
+          const mediaValues = json.grades.reduce((acc, cur) => {
             return cur.type === type && cur.subject === subject
-              ? acc + cur.value
+              ? [...acc, cur.value]
               : acc
-          }, 0)
+          }, [])
 
-          if (!media) {
-            res.status(404).send('A média não pode ser calculada')
+          if (!mediaValues) {
+            res.status(404).send('A média não pôde ser calculada')
           } else {
+            const media =
+              mediaValues.reduce((acc, cur) => {
+                return acc + cur
+              }, 0) / mediaValues.length
+
             res.status(200).json({ media: `${media}` })
           }
         } catch (error) {
