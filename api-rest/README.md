@@ -52,7 +52,6 @@ $ yarn dev
 
 ## Built With
 
-- [Router](https://github.com/ReactTraining/react-router) - Routers
 - [Express](https://github.com/expressjs/express)
 - [ESlint](https://eslint.org/) - Linter
 - [Prettier](https://prettier.io/) - Code Formatter
