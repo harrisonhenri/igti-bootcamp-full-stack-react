@@ -14,19 +14,19 @@ class Media {
 
           const json = JSON.parse(data)
 
-          const mediaValues = json.grades.reduce((acc, cur) => {
+          const mediaVector = json.grades.reduce((acc, cur) => {
             return cur.type === type && cur.subject === subject
               ? [...acc, cur.value]
               : acc
           }, [])
 
-          if (!mediaValues) {
+          if (!mediaVector) {
             res.status(404).send('A média não pôde ser calculada')
           } else {
             const media =
-              mediaValues.reduce((acc, cur) => {
+              mediaVector.reduce((acc, cur) => {
                 return acc + cur
-              }, 0) / mediaValues.length
+              }, 0) / mediaVector.length
 
             res.status(200).json({ media: `${media}` })
           }
