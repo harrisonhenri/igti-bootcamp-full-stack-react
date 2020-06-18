@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
 * {
   margin:0;
   padding:0;
@@ -9,11 +11,15 @@
   outline:0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background: linear-gradient(-90deg, #1DA1BE, #1DA1FA);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
-  font: 400 14px 'Helvetica Neue', Arial, sans-serif;
+  font: 400 1.4rem 'Roboto', sans-serif;
   color: #8080E9;
 } 
 
@@ -32,8 +38,7 @@ button {
 .container{
   width: 100%;
   max-width: 1120px;
-  height: 100vh;
-  margin: 0 auto;
+  margin: 100px auto;
   padding: 0 24px;
   
   display: flex;
@@ -41,9 +46,9 @@ button {
   justify-content: center;
 }
 
-.main{  
+.container .main{  
   width: 100%;
-  padding: 32px;
+  padding: 24px;
   background: #f0f0f5;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
@@ -55,7 +60,7 @@ button {
 
 .container .main h1 {
   margin: 20px 0;
-  font-size: 32px;
+  font-size: 4rem;
 }
 
 .container .main form {
@@ -64,53 +69,52 @@ button {
 }
 
 .container .main form input {
-  width: 85%;
+  width: 80%;
   height: 60px;
   border: 1px solid #dcdce6;
   border-radius: 8px;
   padding: 0 24px;
-  font-size: 18px;
+  font-size: 2.4rem;
+  font: 400 2.4rem 'Roboto', sans-serif;
   
   margin-right: 10px;
 }
 
 .container .main form button {
-  width: 15%;
+  width: 20%;
   height: 60px;
   background: #8080E9;
-  border: 0;
   border-radius: 8px;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 2.4rem;
   line-height: 60px;
-  transition: filter 0.2s;
   color: #fff;
   font-family: 'Helvetica Neue', Arial, sans-serif;
+  transition: filter ease 0.2s, border 0.2s ease 0s, transform 0.2s ease 0s;
+  border: 3px solid transparent;
 }
 
 .container .main form button:hover {
   filter: brightness(90%);
+  border-color:#333;
+  transform: translateY(-7px);
 }
 
 .container .results{
   width: 100%;
-  /* padding: 32px;
-  background: #f0f0f5;
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
-  border-radius: 8px; */
 
   margin-top: 64px;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .container .results .results-box{
   width: 100%;
-  padding: 32px;
+  padding: 24px;
   background: #f0f0f5;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
@@ -118,12 +122,65 @@ button {
   margin: 0 16px 0 0;
 }
 
-.container .results .results-box h2{
-  font-size: 18px;
-  font-weight: 700;
-}
-
 .container .results .results-box:nth-child(2){
   margin: 0 0 0 16px;
+  text-align: center;
+}
+
+.container .results .results-box h2{
+  font-size: 3.2rem;
+}
+
+.container .results .results-box div#found-users .found-user{
+  display: flex;
+  align-items: center;
+
+  margin: 10px 0;
+  padding: 10px 0;
+
+  font-size: 2.4rem;
+}
+
+.container .results .results-box div#found-users .found-user img{
+  margin-right: 10px;
+}
+
+
+.container .results .results-box div#found-stats{
+  display: flex;
+  flex-direction: column;
+
+  font-size: 2.4rem;
+}
+
+@media (max-width: 768px) {
+  .container .main form {
+    flex-direction: column;
+  }
+
+  .container .main form input{
+    width: 100%;
+  }
+
+  .container .main form button{
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .container .main h1 {
+    font-size: 3.2rem;
+  }
+
+  .container .results{
+    flex-direction: column-reverse;
+  }
+  
+  .container .results .results-box{
+    margin: 16px 0 0 0;
+  }
+
+  .container .results .results-box:nth-child(2){
+    margin: 0 0 16px 0;
+  }
 }
 
