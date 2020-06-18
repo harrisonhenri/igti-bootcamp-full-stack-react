@@ -1,4 +1,4 @@
-# User control Application
+# User Search Application
 
 ## About this Project
 
@@ -25,22 +25,18 @@ Also, you can use this Project as you wish, be for study, be for make improvemen
 
 It's free!
 
-## Functionalities
-
-- CRUD of grades using grades.json file
-
-- Calculates the total grade of a student
-
-- Return the average grade for some subject and type
-
-- Return the three best grades for some subject and type
-
 ## Install
 
 Clone the repo using
 
 ```
 $ git clone https://github.com/HarrisonHenri/igti-bootcamp-full-stack-react.git
+```
+
+Move to fundamentos-htlm-css-js dir
+
+```
+$ cd fundamentos-htlm-css-js
 ```
 
 ## Contributing
